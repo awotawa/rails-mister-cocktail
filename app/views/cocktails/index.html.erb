@@ -1,7 +1,25 @@
-<h1>Available cocktails</h1>
+<div class="d-flex justify-content-center m-3">
+  <h1>Available cocktails</h1>
+</div>
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li> <%= cocktail.name %> </li>
-  <% end %>
-</ul>
+</br>
+  <div class="d-flex justify-content-center m-3">
+    <%= link_to "Create a new cocktail", new_cocktail_path, class: 'btn btn-info' %>
+  </div>
+    <div class="row">
+      <div class="card-group d-flex justify-content-between">
+        <% @cocktails.each do |cocktail|%>
+        <div class="col-3">
+          <div class="card m-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><%= cocktail.name %></h5>
+              <div class="">
+                <%= link_to 'See More', cocktail_path(cocktail.id), :class => "btn btn-primary" %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+</div>
