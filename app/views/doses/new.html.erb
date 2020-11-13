@@ -1,14 +1,16 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>Add dose</h1>
+<div class="showing">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>Add dose</h1>
 
-      <%= simple_form_for [@cocktail, @dose] do |f| %>
-        <%= f.input :description %>
-        <%= f.association :ingredient %>
-        <!-- .association uses the foreign key created in the activerecord model -->
-        <%= f.submit class: 'btn btn-primary' %>
-      <% end %>
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+          <%= f.input :description %>
+          <%= f.association :ingredient %>
+          <!-- .association uses the foreign key created in the activerecord model -->
+          <%= f.submit class: 'btn btn-primary' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
