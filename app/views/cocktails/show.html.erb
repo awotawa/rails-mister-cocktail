@@ -4,7 +4,7 @@
   <li>Ingredients: </li>
   <li>Doses: </li>
   <% @doses.each do |dose| %>
-    <li> <%= dose.description %> - <%= dose.ingredient.name %></li>
+    <li> <%= dose.description %> of <%= dose.ingredient.name %> - <%= link_to '', dose_path(dose), method: :delete, data: { confirm: 'Do you really want to delete this dose?' }, :class => "far fa-trash-alt"  %> </li>
   <% end %>
 </ul>
 <%= link_to 'Add ingredients', new_cocktail_dose_path(@cocktail) %>
